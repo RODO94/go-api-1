@@ -5,15 +5,16 @@ import (
 	"net/http"
 )
 
-
+// This type defines the params in a Coin Balance Request
 type CoinBalanceParams struct {
 	Username string
 }
 
+
+// This type defines the Response for a Coin Balance Request
 type CoinBalanceResponse struct {
 	// HTTP status code
 	Code int 
-
 	Balance int64
 }
 
@@ -22,6 +23,7 @@ type Error struct{
 	Message string
 }
 
+// This function creates and sends an error
 func writeError(w http.ResponseWriter, message string, code int){
 
 resp := Error{
